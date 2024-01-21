@@ -3,6 +3,10 @@ const router = express.Router();
 const bootcampsController = require("../controller/bootcampsController");
 
 router
+  .route("/radius/:zipcode/:distance")
+  .get(bootcampsController.getBootcampsInRadius);
+
+router
   .route("/")
   .get(bootcampsController.getBootcamps)
   .post(bootcampsController.postBootcamps);
